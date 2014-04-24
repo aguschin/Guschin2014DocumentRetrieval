@@ -1,0 +1,172 @@
+\documentclass[12pt]{article}
+\usepackage{a4wide}
+\usepackage{multicol}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, amscd}
+\usepackage{graphicx, epsfig}
+\usepackage{epic}
+\usepackage{ecltree}
+\usepackage{epstopdf}
+\drawwith{\dottedline{1}}
+\setlength{\GapDepth}{4mm}
+\setlength{\GapWidth}{8mm}
+
+\begin{document}
+\section*{Multivariate Regression Composer}
+Author: Mikhail Kuznetsov\\
+Moscow Institute of Physics and Technology\\
+Supervisor: V.V. Strijov\\
+Course: Machine Learning and Data Analysis, Fall 2013\\
+Date: 24.12.2013\\
+\hrule
+\vspace{1cm}
+Model\;1: $f(w,\mathbf{x})=(w*(w*(x_2+x_2)^2+w*(x_2+x_2)+w)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w)$
+
+MSE error\;9245.8481
+
+nMSE error\;0.017607
+
+\begin{multicols}{2}
+\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{1.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;2: $f(w,\mathbf{x})=(w*(w+w*(x_2))+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w)$
+
+MSE error\;21680.5325
+
+nMSE error\;0.041288
+
+\begin{multicols}{2}
+\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{2.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;3: $f(w,\mathbf{x})=w*((w*(w+sin(w*(x_1)+w+x_2))+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w))+w$
+
+MSE error\;27324.1362
+
+nMSE error\;0.052035
+
+\begin{multicols}{2}
+\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{3.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;4: $f(w,\mathbf{x})=(w*(w+x_1+(w*(w+x_1)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w))+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w)$
+
+MSE error\;38588.0872
+
+nMSE error\;0.073486
+
+\begin{multicols}{2}
+\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{plus2}\chunk{x1}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{4.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;5: $f(w,\mathbf{x})=w*(w*(w*(w*ew*(x_1)^2+w*(x_1)+wp(((w*(x_1)^2+w*(x_1)+w-w)^2)*w))+w))^2+w*(w*(w*(w*ew*(x_1)^2+w*(x_1)+wp(((w*(x_1)^2+w*(x_1)+w-w)^2)*w))+w))+w$
+
+MSE error\;41401.7882
+
+nMSE error\;0.078844
+
+\begin{multicols}{2}
+\begin{bundle}{parabola}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{5.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;6: $f(w,\mathbf{x})=w*((w*(w+x_1)+w)*(w*ex_1+w*(x_2)^2+w*(x_2)+w-(x_2)p(((x_1+w*(x_2)^2+w*(x_2)+w-(x_2)-w)^2)*w)))^2+w*((w*(w+x_1)+w)*(w*ex_1+w*(x_2)^2+w*(x_2)+w-(x_2)p(((x_1+w*(x_2)^2+w*(x_2)+w-(x_2)-w)^2)*w)))+w$
+
+MSE error\;45562.4522
+
+nMSE error\;0.086768
+
+\begin{multicols}{2}
+\begin{bundle}{parabola}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{plus2}\chunk{x1}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{parabola}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{6.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;7: $f(w,\mathbf{x})=w*((w*(w+x_1)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w))+w$
+
+MSE error\;46565.6029
+
+nMSE error\;0.088678
+
+\begin{multicols}{2}
+\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{7.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;8: $f(w,\mathbf{x})=w*((w*(w+w*(x_1)+w)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w))$
+
+MSE error\;46629.0881
+
+nMSE error\;0.088799
+
+\begin{multicols}{2}
+\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{8.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;9: $f(w,\mathbf{x})=(w*(x_1)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w)$
+
+MSE error\;46629.0873
+
+nMSE error\;0.088799
+
+\begin{multicols}{2}
+\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{9.eps}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+Model\;10: $f(w,\mathbf{x})=(w*(w+w*(x_1)+w)+w)*(w*(w*ex_1p(((x_1-w)^2)*w))+w)$
+
+MSE error\;46629.0882
+
+nMSE error\;0.088799
+
+\begin{multicols}{2}
+\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{normal}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{10.eps}
+\end{multicols}
+
+\end{document}

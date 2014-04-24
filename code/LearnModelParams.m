@@ -38,5 +38,6 @@ if ~isempty(model.InitParams)
           model.FoundParams = initParams;
     end
     model.MSE = mean( (handle(model.FoundParams, x) - y) .^ 2);
+    model.nMSE = norm((handle(model.FoundParams, x) - y)).^ 2/norm(y).^2;
     model.Error = model.MSE + 0.05 * norm(model.FoundParams); % Fixme: error function sould be an input
 end
