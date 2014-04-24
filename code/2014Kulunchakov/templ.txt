@@ -1,0 +1,2 @@
+plus2_(expl_(times2_(sin_(expl_(x1)),cos_(expl_(x1)))),plus_(x1))
+

@@ -1,0 +1,4 @@
+plus2_(x1,x1) 2*x1
+minus2_(x1,x1) 0
+minus2_(plus2_(x2,x1),x1) x2
+minus2_(x1,plus2_(x2,x1)) -x2
