@@ -23,12 +23,18 @@ addpath(CODEFOLDER);
 
 [ data, primitives, models, nlinopt, genopt, pltopt ] = InputProjectData( PrjFname, DATAFOLDER );
 
+Q = zeros(2,1);
+q = figure('name','Quality');
+pltopt.figHandle = figure('name','Function');
+data = dataSplit(data);
+
 population = CreatePopulation(models.Models, models.InitParams, primitives);
 population = [population, CreateRandomPopulation(5, primitives, size(data.X, 2), 5)];
 population = LearnPopulation(population, data.X, data.Y, nlinopt, pltopt );
 
 for itr = 1 : genopt.MAXCYCLECOUNT
     itr
+    Q = PlotQuality (Q, population, data, itr, q);
     populationCO = CrossoverPopulation(population, genopt.CROSSINGAMOUNT);
     populationCO = LearnPopulation(populationCO, data.X, data.Y, nlinopt, pltopt );
     populationMU = MutationPopulation(population, primitives, size(data.X, 2), genopt.MUTATIONAMOUNT);

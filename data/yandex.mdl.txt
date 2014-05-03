@@ -1,0 +1,4 @@
+% Model in short notation; default parameters vector, can be omitted
+% these two fields must be separated with the sign ';'.
+
+%plus2_(plus2_(x1,x2),plus2_(x3,x4)); []

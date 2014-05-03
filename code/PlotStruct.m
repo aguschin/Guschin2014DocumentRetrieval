@@ -1,4 +1,4 @@
-function h = plotstruct(foo, params ,X,Y, pltopts)
+function h = PlotStruct(foo, params ,X,Y, pltopts)
 % h = plotstruct(mdl,X,Y) plot 2D and 3D model data and source data 
 % 
 % X [m,n] indenendent values
@@ -29,6 +29,8 @@ function h = plotstruct(foo, params ,X,Y, pltopts)
 %
 % http://strijov.com
 % Strijov, 08-may-08
+
+figure(pltopts.figHandle);
 
 if nargin < 4, error('plotstruct', 'insuffitient arguments '); end   
 

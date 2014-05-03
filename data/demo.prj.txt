@@ -7,7 +7,7 @@ RegistryFile = 'demo.reg.xlsx';
 % MODEL GENERATION OPTIONS
 DATASEPARATOR    = ',';             % the column separator in the DataFile
 THRESHOLDQUALITY = 0.001;     	    % stop when the model with error (MSE) less then THRESHOLDQUALITY is found
-MAXCYCLECOUNT    = 10;%5;           % stop when MAXCYCLECOUNT is resched
+MAXCYCLECOUNT    = 30;%5;           % stop when MAXCYCLECOUNT is resched
 CROSSINGAMOUNT   = 10;%10;%1;       % number of crossovers (each crossover adds two models inthe population)
 MUTATIONAMOUNT   = 10;%10;%1;       % number of mutations (each mutation adds one model in the population)
 BESTELEMAMOUNT   = 10;%4;           % number of the selected models pass in the next population 

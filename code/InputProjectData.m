@@ -39,13 +39,22 @@ end
 if isfield(pltopts,'fignum'), PLTOPTSFIGNUM = pltopts.fignum; end
 
 
-if nargin < 1, PrjFname = 'demo.prj.txt'; end
+if nargin < 1, prjFname = 'demo.prj.txt'; end
 PrjFullFname = fullfile(dataFolder, prjFname);
 
 DatFullFname = fullfile(dataFolder, DataFile);
 Data = dlmread(DatFullFname,DATASEPARATOR); % read the data
-data.Y= Data(:,1);
-data.X = Data(:,2:end);
+if strcmp(prjFname,'demo.prj.txt')
+    Data = Data(randperm(size(Data,1)),:);
+end;
+
+try
+    a = strsplit(prjFname,'.');
+    load(strcat('data\',a{1}));
+catch
+    data.Y= Data(:,1);
+    data.X = Data(:,2:end);
+end;
 
 % get the registry (list of the models elements and the initial population of models 
 RegistryFullFname = fullfile(dataFolder, RegistryFile);

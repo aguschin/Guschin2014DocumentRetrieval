@@ -47,12 +47,18 @@ for i = 1:length(Population)
     fprintf(fid, strcat('MSE error\\;', num2str(Population{i}.MSE), '\n\n')); %PRINT MSE
     fprintf(fid, strcat('nMSE error\\;', num2str(Population{i}.nMSE), '\n\n')); %PRINT normalized MSE
     %fprintf(fid,'%s\n\n', strName);
-    fprintf(fid,'\\begin{multicols}{2}\n%s', strMat);
-    h = PlotStruct(str2func(Population{i}.Handle), Population{i}.FoundParams, X, y, pltopt);
-    figFname = strcat(num2str(i), '.eps');
-    saveas(h, fullfile(reportFolder, figFname), 'eps');
-    fprintf(fid, strcat('\n\n\\columnbreak\n\\includegraphics[width=8cm]{', figFname, '}\n\\end{multicols}'));
+    if size(X,2) <= 2
+        fprintf(fid,'\\begin{multicols}{2}\n%s', strMat);
+        h = PlotStruct(str2func(Population{i}.Handle), Population{i}.FoundParams, X, y, pltopt);
+        figFname = strcat(num2str(i), '.eps');
+        saveas(h, fullfile(reportFolder, figFname), 'eps');
+        fprintf(fid, strcat('\n\n\\columnbreak\n\\includegraphics[width=8cm]{', figFname, '}\n\\end{multicols}'));
+        fprintf(fid, '}\n\\end{multicols}');
+    else 
+        fprintf(fid,'\n%s', strMat);
+    end;
     fprintf(fid,'\n\n');
+    fprintf(fid,'\\hrule\n\\vspace{1cm}\n');
     
 end
 
