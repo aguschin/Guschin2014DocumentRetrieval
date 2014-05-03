@@ -30,7 +30,9 @@ function h = PlotStruct(foo, params ,X,Y, pltopts)
 % http://strijov.com
 % Strijov, 08-may-08
 
-figure(pltopts.figHandle);
+if exist('pltopts.figHandle')
+    figure(pltopts.figHandle);
+end;
 
 if nargin < 4, error('plotstruct', 'insuffitient arguments '); end   
 

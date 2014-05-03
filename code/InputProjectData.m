@@ -1,4 +1,4 @@
-function [ data, primitives, models, nlinopts, genopts, pltopts ] = InputProjectData( prjFname, dataFolder )
+function [ data, primitives, models, nlinopts, genopts, pltopts ] = InputProjectData( prjFname, vars )
 %INPUTPROJECTDATA 
 % Download data for project from a file
 %
@@ -20,9 +20,7 @@ function [ data, primitives, models, nlinopts, genopts, pltopts ] = InputProject
 % Date 24.12.2013
 
 % Initialize default arguments
-if nargin < 2
-    dataFolder = 'data';
-end;
+dataFolder = 'data';
 
 PrjFullFname = fullfile(dataFolder, prjFname);
 
@@ -56,6 +54,8 @@ catch
     data.X = Data(:,2:end);
 end;
 
+data.X = AddNewVars(data.X, vars);
+    
 % get the registry (list of the models elements and the initial population of models 
 RegistryFullFname = fullfile(dataFolder, RegistryFile);
 ModelsFullFname   = fullfile(dataFolder, ModelsFile);

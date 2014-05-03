@@ -1,4 +1,4 @@
-function [ population ] = main(PrjFname)
+function [ population ] = main(PrjFname, vars)
 % The main function of the MVR 
 
 warning on
@@ -11,6 +11,9 @@ PLTOPTSFIGNUM = 1;
 if nargin < 1
     PrjFname = 'demo.prj.txt';
 end
+if nargin < 2
+    vars = 'all';
+end;
 THISFOLDER = fileparts(mfilename('fullpath'));
 DATAFOLDER = fullfile(THISFOLDER,'data');
 FUNCFOLDER = fullfile(THISFOLDER,'func');
@@ -21,11 +24,13 @@ addpath(FUNCFOLDER);
 addpath(CODEFOLDER);
 
 
-[ data, primitives, models, nlinopt, genopt, pltopt ] = InputProjectData( PrjFname, DATAFOLDER );
+[ data, primitives, models, nlinopt, genopt, pltopt ] = InputProjectData( PrjFname, vars );
 
 Q = zeros(2,1);
 q = figure('name','Quality');
-pltopt.figHandle = figure('name','Function');
+if size(data.X,2)<=2
+    pltopt.figHandle = figure('name','Function');
+end;
 data = dataSplit(data);
 
 population = CreatePopulation(models.Models, models.InitParams, primitives);
