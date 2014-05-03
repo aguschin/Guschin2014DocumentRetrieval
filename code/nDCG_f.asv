@@ -1,0 +1,21 @@
+function [nDCG] = nDCG_f (x, y, z, w, handle)
+%counting summary nDCG for the set of queries
+
+c = unique(z); %amount of queries
+
+nDCG = 0;
+k = size(c,1);
+
+%for j=1:size(c,1)
+%    ind = find(z==c(j)); %select query-document pairs for query c(j)
+    DCG = DCG_f(x(1:end,:), y(1:end,:), w, handle);
+    ind = ind(find(y(ind))); %select non-zero elements
+    if (size(ind,1)<7) k=k-1; continue; end %do not include small number of document for queries
+    iDCG = 1; %default value in case when all pairs have "0" mark from assessor
+    if ~(isempty(ind)) %if all "0" marks
+    iDCG = iDCG_f(y(ind,:)); %returns zero if ind is empty
+    end;
+    nDCG = nDCG + DCG/iDCG; 
+end;
+
+nDCG = 1 - nDCG/k; %because we use fminsearch function and it tries to find min

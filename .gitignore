@@ -213,3 +213,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+report/ListOfObtainedModels.synctex
+report
+report/
