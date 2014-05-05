@@ -1,18 +1,17 @@
 %create synthetic data
 
-function [y,x] = GenerateSample(s,func)
+function [y,x] = GenerateSample(s,func,d)
 
-if nargin < 1
-    s = 10;
-end
+if nargin < 3, d = 2; end;
+
 THISFOLDER = fileparts(mfilename('fullpath'));
 DATAFOLDER = fullfile(THISFOLDER,'data');
 
 if strcmp(func, 'testfunc')
     y = testfunc(x);
 elseif strcmp(func, 'Rosenb')
-    x = randn(s,2);
-    y = RosenBIG([x(:,1) x(:,2)]);
+    x = randn(s,d);
+    y = RosenBIG(x);
 end;
 
 data = [y,x];

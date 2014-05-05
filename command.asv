@@ -1,32 +1,36 @@
 %join GenerateSample and main
 
-GenerateSample(1000,'Rosenb');
+project = 'synthetic.prj.txt'; %synthetic
 
-project = 'yandex.prj.txt';
+
+
+a = strsplit(project,'.');
 
 try
-    load vars
+    load(strcat('2vars_',a{1},dim_t));
 catch
     [vars, mdl] = FindLinearModel(project, 15);
-    save('vars','vars');
+    save(strcat('vars_',a{1}),dim_t,'vars');
 end;
-
-bestModels = cell(1);
 
 try
-    load vars1
+    load(strcat('bestModels1_',a{1},dim_t));
 catch
-    for i=1:5
-        population = main(project, vars);
-        f1 = str2func(population{1}.Handle);
-        f2 = @(x)f1(population{1}.FoundParams,x);
-        bestModels{i} = f2;
+    bestModels = cell(1);
+    i = 1;
+    while i <= 10
+        try
+            population = main(project, vars);
+            f1 = str2func(population{1}.Handle);
+            f2 = @(x)f1(population{1}.FoundParams(:)',x);
+            bestModels{i} = f2;
+            i = i + 1;
+        catch
+            'error in main.m'
+        end;
     end;
+    save(strcat('bestModels_',a{1},dim_t),'bestModels');
 end;
 
-[vars, mdl] = FindLinearModel(project, 50, vars);
-save('vars1','vars');
-
-save('bestModels','bestModels');
-
-main(project, {vars bestModels{:}})
+[vars, mdl] = FindLinearModel(project, 50, [vars bestModels]);
+save(strcat('vars1_',a{1},dim_t),'vars');
