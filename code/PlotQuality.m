@@ -26,4 +26,4 @@ figure(h);
 p = plot(x,Q(1,:),'r',x,Q(2,:),'g',x,Q(3,:),'b',x,Q(4,:),'k');
 legend('nMSE: Learning','nMSE: Test','nDCG: Learning','nDCG: Test');
 xlabel('Number of iterations');
-set(p,'linewidth',2);
+%set(p,'linewidth',2);

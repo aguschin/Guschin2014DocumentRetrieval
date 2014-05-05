@@ -56,7 +56,7 @@ for i = 1:iter
     end;
     q = 0;
     num = 0; %necessary?
-    MSE = 1000000000;%10000000000;
+    nMSE = 1000000000;%10000000000;
     nDCG = 0;
     for j = 1:size(data.X,2)
         na(1,i) = j;
@@ -72,26 +72,27 @@ for i = 1:iter
         TestX = data.TestX(:,na(1,:));
         linm.FoundParams = mdl.Coefficients.Estimate';
         mdl_nDCG = nDCG_f(X, data.Y, linm.FoundParams, linm.Handle);
-        
-        if  mdl.MSE < MSE %mdl_nDCG > nDCG %
+        y1 = predict(mdl, data.X(:,na(1,:)));
+        mdl_nMSE = norm((y1 - data.Y)).^ 2/norm(data.Y).^2;
+        if  mdl_nMSE < nMSE %mdl_nDCG > nDCG %
             nDCG = mdl_nDCG;
             num = j;
             y1 = predict(mdl, data.TestX(:,na(1,:)));
-            MSE = mdl.MSE;
-            TestMSE = mse(data.TestY-y1);
+            nMSE = mdl_nMSE;
+            TestnMSE = norm(y1 - data.TestY).^ 2/norm(data.TestY).^2;
             TESTnDCG = nDCG_f(TestX, data.TestY, linm.FoundParams, linm.Handle);
         end;
     end;
     na(1,i) = num;
-    na(2,i) = MSE;
-    na(3,i) = TestMSE;
+    na(2,i) = nMSE;
+    na(3,i) = TestnMSE;
     na(4,i) = nDCG;
     na(5,i) = TESTnDCG;
     na
     [a, b] = min(na(3,:))
     figure(h);
     p = plot(linspace(1,i,i),na(2,:),'r',linspace(1,i,i),na(3,:),'b',linspace(1,i,i),na(4,:),'g',linspace(1,i,i),na(5,:),'c');
-    set(p,'linewidth',2);
+    %set(p,'linewidth',2);
     hleg1 = legend('nMSE (learning sample)','nMSE (testing sample)', 'nDCG (learning sample)', 'nDCG (testing sample)');
     set(hleg1,'Location','SouthWest')
     %ylabel('nMSE or nDCG');

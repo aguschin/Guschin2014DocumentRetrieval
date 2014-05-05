@@ -4,25 +4,33 @@ GenerateSample(4000,'Rosenb');
 
 project = 'synthetic.prj.txt'; %synthetic
 
+a = strsplit(project,'.');
+
 try
-    load vars_synthetic
+    load(strcat('2vars_',a{1}));
 catch
     [vars, mdl] = FindLinearModel(project, 15);
-    save('vars_synthetic','vars');
+    save(strcat('vars_',a{1}),'vars');
 end;
 
 try
-    load bestModels_synthetic5456
+    load(strcat('bestModels1_',a{1}));
 catch
     bestModels = cell(1);
-    for i=1:1
-        population = main(project, vars);
-        f1 = str2func(population{1}.Handle);
-        f2 = @(x)f1(population{1}.FoundParams(:)',x);
-        bestModels{i} = f2;
+    i = 1;
+    while i <= 10
+        try
+            population = main(project, vars);
+            f1 = str2func(population{1}.Handle);
+            f2 = @(x)f1(population{1}.FoundParams(:)',x);
+            bestModels{i} = f2;
+            i = i + 1;
+        catch
+            'error in main.m'
+        end;
     end;
-    save('bestModels_synthetic','bestModels');
+    save(strcat('bestModels_',a{1}),'bestModels');
 end;
 
 [vars, mdl] = FindLinearModel(project, 50, [vars bestModels]);
-save('vars1_synthetic','vars');
+save(strcat('vars1_',a{1}),'vars');

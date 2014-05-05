@@ -12,12 +12,27 @@ if strcmp(func, 'testfunc')
     y = testfunc(x);
 elseif strcmp(func, 'Rosenb')
     x = randn(s,2);
-    y = Rosenb(x(:,1),x(:,2));
+    y = RosenBIG([x(:,1) x(:,2)]);
 end;
 
 data = [y,x];
 
 dlmwrite(strcat(DATAFOLDER,'\synthetic.dat.txt'), data, ',') %save to \data\synthetic.dat.txt
+
+end
+
+function [y] = RosenBIG(xx)
+
+d = size(xx,2);
+sum = 0;
+for ii = 1:(d-1)
+	xi = xx(:,ii);
+	xnext = xx(:,ii+1);
+	new = 100*(xnext-xi.^2).^2 + (xi-1).^2;
+	sum = sum + new;
+end
+
+y = sum;
 
 end
 
@@ -33,3 +48,4 @@ function [f] = Rosenb(x,y) %Rosenbrock function
 f=((1-x).^2)+(100*((y-(x.^2)).^2));
 
 end
+
