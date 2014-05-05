@@ -30,7 +30,7 @@ function h = PlotStruct(foo, params ,X,Y, pltopts)
 % http://strijov.com
 % Strijov, 08-may-08
 
-if exist('pltopts.figHandle')
+try
     figure(pltopts.figHandle);
 end;
 

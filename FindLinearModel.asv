@@ -91,7 +91,7 @@ for i = 1:iter
     [a, b] = min(na(3,:))
     figure(h);
     p = plot(linspace(1,i,i),na(2,:),'r',linspace(1,i,i),na(3,:),'b',linspace(1,i,i),na(4,:),'g',linspace(1,i,i),na(5,:),'c');
-    set(p,'linewidth',2);
+    set(h(1),'linewidth',5);
     hleg1 = legend('nMSE (learning sample)','nMSE (testing sample)', 'nDCG (learning sample)', 'nDCG (testing sample)');
     set(hleg1,'Location','SouthWest')
     %ylabel('nMSE or nDCG');

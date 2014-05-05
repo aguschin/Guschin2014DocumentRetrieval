@@ -4,6 +4,8 @@ function [DCG] = iDCG_f (y)
 DCG = 0;
 y = sort(y,'descend');
 for i=1:size(y,1)
-    DCG = DCG + (2^y(i)-1)/log(i+1);
+    %inc = 2^y(i)-1;
+    inc = y(i);
+    DCG = DCG + inc/log(i+1);
 end;
 

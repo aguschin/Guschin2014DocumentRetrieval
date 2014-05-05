@@ -21,131 +21,181 @@ Course: Machine Learning and Data Analysis, Fall 2013\\
 Date: 24.12.2013\\
 \hrule
 \vspace{1cm}
-Model\;1: $f(w,\mathbf{x})=(x_19)*((w*(tanh(x_4))+w)*(x_16+x_2+x_11))+(w*(tanh(x_4))+w)*(x_11+x_16+x_11+x_20)$
+Model\;1: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*(x_1)^2+w*(x_1)+w)))$
 
-MSE error\;0.64462
+MSE error\;89274.8126
 
-nMSE error\;0.31815
+nMSE error\;0.068532
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x11}\end{bundle}}\chunk{x20}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
-
-\hrule
-\vspace{1cm}
-\hrule
-\vspace{1cm}
-Model\;2: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_16+x_11+x_16+tanh(x_4)+x_11))$
-
-MSE error\;0.65477
-
-nMSE error\;0.32316
-
-
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{1.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;3: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_16+tanh(x_4)+x_11+x_11+x_19))$
+Model\;2: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(w*(w*(x_1)^2+w*(x_1)+w)+w)+w)$
 
-MSE error\;0.6548
+MSE error\;89292.3216
 
-nMSE error\;0.32317
+nMSE error\;0.068545
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{x19}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
-
-\hrule
-\vspace{1cm}
-\hrule
-\vspace{1cm}
-Model\;4: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_11+x_11+x_16+x_19))$
-
-MSE error\;0.65452
-
-nMSE error\;0.32303
-
-
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x19}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{2.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;5: $f(w,\mathbf{x})=(x_19)*((w*(tanh(x_4))+w)*(x_16+x_2+x_11))+(w*(tanh(x_4))+w)*(x_11+x_11+x_16+x_11)$
+Model\;3: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(w*(w*(w+w*(x_1)+w)^2+w*(w+w*(x_1)+w)+w)+w)+w)$
 
-MSE error\;0.6489
+MSE error\;89292.3216
 
-nMSE error\;0.32026
+nMSE error\;0.068545
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
-
-\hrule
-\vspace{1cm}
-\hrule
-\vspace{1cm}
-Model\;6: $f(w,\mathbf{x})=x_20+((w*(tanh(x_4))+w)*(x_11+x_11+x_16))*(x_16+x_2)$
-
-MSE error\;0.65523
-
-nMSE error\;0.32339
-
-
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{x16}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{3.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;7: $f(w,\mathbf{x})=(x_19)*((w*(tanh(x_4))+w)*(x_16+x_2+x_11))+(w*(x_11+x_16+x_2)+w)*(x_11+x_11+x_16+x_11)$
+Model\;4: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)-(x_2))$
 
-MSE error\;0.64953
+MSE error\;89310.7253
 
-nMSE error\;0.32057
+nMSE error\;0.068559
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
-
-\hrule
-\vspace{1cm}
-\hrule
-\vspace{1cm}
-Model\;8: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_11+x_11+x_16+x_11))$
-
-MSE error\;0.65456
-
-nMSE error\;0.32305
-
-
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{4.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;9: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_11+x_16+x_2))$
+Model\;5: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(x_1)^2+w*(x_1)+w)$
 
-MSE error\;0.65312
+MSE error\;89292.3208
 
-nMSE error\;0.32234
+nMSE error\;0.068545
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x11}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{5.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;10: $f(w,\mathbf{x})=x_20+(x_19)*((w*(tanh(x_4))+w)*(x_16+x_2+x_11))$
+Model\;6: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(x_1)^2+w*(x_1)+w)$
 
-MSE error\;0.65312
+MSE error\;89292.3214
 
-nMSE error\;0.32234
+nMSE error\;0.068545
 
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}
 
-\begin{bundle}{plus2}\chunk{x20}\chunk{\begin{bundle}{times2}\chunk{x19}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{tanh}\chunk{x4}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{plus2}\chunk{x16}\chunk{x2}\end{bundle}}\chunk{x11}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\columnbreak
+\includegraphics[width=8cm]{6.eps}
+\end{multicols}}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+Model\;7: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)+w)$
+
+MSE error\;89292.3209
+
+nMSE error\;0.068545
+
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{7.eps}
+\end{multicols}}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+Model\;8: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*((w+x_1)*(w*(x_1)-(x_2)))+w)))$
+
+MSE error\;89544.3764
+
+nMSE error\;0.068738
+
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{mult}\chunk{x1}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{8.eps}
+\end{multicols}}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+Model\;9: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*((w+x_1)*(x_2+w*(w*((w+x_1)*(x_1+x_2))+w)))+w)))$
+
+MSE error\;96987.591
+
+nMSE error\;0.074452
+
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x1}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{9.eps}
+\end{multicols}}
+\end{multicols}
+
+\hrule
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+Model\;10: $f(w,\mathbf{x})=w*ew+x_2p(((w+x_2-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)+w)$
+
+MSE error\;99468.9924
+
+nMSE error\;0.076357
+
+\begin{multicols}{2}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{plus}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+
+\columnbreak
+\includegraphics[width=8cm]{10.eps}
+\end{multicols}}
+\end{multicols}
 
 \hrule
 \vspace{1cm}
