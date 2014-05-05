@@ -21,14 +21,14 @@ Course: Machine Learning and Data Analysis, Fall 2013\\
 Date: 24.12.2013\\
 \hrule
 \vspace{1cm}
-Model\;1: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*(x_1)^2+w*(x_1)+w)))$
+Model\;1: $f(w,\mathbf{x})=w*((x_2)*(w*(w*(x_2)+w+x_2)))+w-((w*(w*((w*(w*(x_2)+w+x_2))*(w*(w*(x_2+w+sin(sin(x_2))))))+w))*(w*ew*(x_1)^2+w*(x_1)+wp(((w*(x_1)^2+w*(x_1)+w-w)^2)*w)))$
 
-MSE error\;89274.8126
+MSE error\;45444.6281
 
-nMSE error\;0.068532
+nMSE error\;0.02971
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{1.eps}
@@ -39,14 +39,14 @@ nMSE error\;0.068532
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;2: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(w*(w*(x_1)^2+w*(x_1)+w)+w)+w)$
+Model\;2: $f(w,\mathbf{x})=(w*(w*(w*((x_2)*(w*ew*(x_2)^2+w*(x_2)+wp(((w*(x_2)^2+w*(x_2)+w-w)^2)*w)))+w-((w*(x_2))*(x_2)))+w)^2+w*(w*(w*((x_2)*(w*ew*(x_2)^2+w*(x_2)+wp(((w*(x_2)^2+w*(x_2)+w-w)^2)*w)))+w-((w*(x_2))*(x_2)))+w)+w)*(w*(w*(x_1)+w)+w)$
 
-MSE error\;89292.3216
+MSE error\;42060.9008
 
-nMSE error\;0.068545
+nMSE error\;0.027498
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{times2}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{x2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{parabola}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{2.eps}
@@ -57,14 +57,14 @@ nMSE error\;0.068545
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;3: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(w*(w*(w+w*(x_1)+w)^2+w*(w+w*(x_1)+w)+w)+w)+w)$
+Model\;3: $f(w,\mathbf{x})=w*((w*(w*(x_2)+w+x_2))*(w*(w*(x_2+w+sin(sin(x_2))))))+w-((w*((sin(w+sin(sin(x_2))))*(w*(x_1)^2+w*(x_1)+w)))*(x_2))$
 
-MSE error\;89292.3216
+MSE error\;79347.5283
 
-nMSE error\;0.068545
+nMSE error\;0.051874
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{linear}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{3.eps}
@@ -75,14 +75,14 @@ nMSE error\;0.068545
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;4: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)-(x_2))$
+Model\;4: $f(w,\mathbf{x})=w*((x_2)*(w*(w*(x_2)+w+x_2)))+w-((w*((sin(x_2))*(w*(x_1)^2+w*(x_1)+w)))*(x_2))$
 
-MSE error\;89310.7253
+MSE error\;88521.3745
 
-nMSE error\;0.068559
+nMSE error\;0.057871
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{4.eps}
@@ -93,14 +93,14 @@ nMSE error\;0.068559
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;5: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(x_1)^2+w*(x_1)+w)$
+Model\;5: $f(w,\mathbf{x})=w*((w*(w*(x_2)+w+x_2))*(w*(w*(x_2+w+sin(sin(x_2))))))+w-((w*((sin(x_2))*(w*(x_1)^2+w*(x_1)+w)))*(x_2))$
 
-MSE error\;89292.3208
+MSE error\;91467.398
 
-nMSE error\;0.068545
+nMSE error\;0.059797
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{5.eps}
@@ -111,14 +111,14 @@ nMSE error\;0.068545
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;6: $f(w,\mathbf{x})=w*ex_2p(((x_2-w)^2)*w)-(w*(x_1)^2+w*(x_1)+w)$
+Model\;6: $f(w,\mathbf{x})=w*((w*(x_2))*(w*(w*(x_2+w+sin(sin(x_2))))))+w-((w*((sin(x_2))*(w*(x_1)^2+w*(x_1)+w)))*(x_2))$
 
-MSE error\;89292.3214
+MSE error\;92460.0679
 
-nMSE error\;0.068545
+nMSE error\;0.060446
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{6.eps}
@@ -129,14 +129,14 @@ nMSE error\;0.068545
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;7: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)+w)$
+Model\;7: $f(w,\mathbf{x})=w*((x_2)*(w*(x_2+sin(sin(x_2)))))+w-((w*((sin(x_2))*(w*(x_1)^2+w*(x_1)+w)))*(x_2))$
 
-MSE error\;89292.3209
+MSE error\;92461.2529
 
-nMSE error\;0.068545
+nMSE error\;0.060447
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{sin}\chunk{x2}\end{bundle}}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{7.eps}
@@ -147,14 +147,14 @@ nMSE error\;0.068545
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;8: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*((w+x_1)*(w*(x_1)-(x_2)))+w)))$
+Model\;8: $f(w,\mathbf{x})=(w*(w*(w*((x_2)*(w*ew*(x_2)^2+w*(x_2)+wp(((w*(x_2)^2+w*(x_2)+w-w)^2)*w)))+w-((w*(x_2))*(x_2)))+w)^2+w*(w*(w*((x_2)*(w*ew*(x_2)^2+w*(x_2)+wp(((w*(x_2)^2+w*(x_2)+w-w)^2)*w)))+w-((w*(x_2))*(x_2)))+w)+w)*(w+w*(x_1)^2+w*(x_1)+w)$
 
-MSE error\;89544.3764
+MSE error\;124958.8033
 
-nMSE error\;0.068738
+nMSE error\;0.081693
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{mult}\chunk{x1}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{times2}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{minus2}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{x2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{parabola}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{8.eps}
@@ -165,14 +165,14 @@ nMSE error\;0.068738
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;9: $f(w,\mathbf{x})=w*ew*(x_2)p(((w*(x_2)-w)^2)*w)-(x_2-(w*(w*((w+x_1)*(x_2+w*(w*((w+x_1)*(x_1+x_2))+w)))+w)))$
+Model\;9: $f(w,\mathbf{x})=w*ew*(w*(x_2+w+sin(w*(sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w))^2+w*(sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w))+w)))p(((w*(w*(x_2+w+sin(w*(sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w))^2+w*(sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w))+w)))-w)^2)*w)$
 
-MSE error\;96987.591
+MSE error\;137969.6409
 
-nMSE error\;0.074452
+nMSE error\;0.090198
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{minus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{times2}\chunk{\begin{bundle}{plus}\chunk{x1}\end{bundle}}\chunk{\begin{bundle}{plus2}\chunk{x1}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{9.eps}
@@ -183,14 +183,14 @@ nMSE error\;0.074452
 \vspace{1cm}
 \hrule
 \vspace{1cm}
-Model\;10: $f(w,\mathbf{x})=w*ew+x_2p(((w+x_2-w)^2)*w)-(w*(w*(x_1)^2+w*(x_1)+w)+w)$
+Model\;10: $f(w,\mathbf{x})=w*ew*(w*(x_2+w+sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w)))p(((w*(w*(x_2+w+sin(w*(w*(x_2)+w)^2+w*(w*(x_2)+w)+w)))-w)^2)*w)$
 
-MSE error\;99468.9924
+MSE error\;141279.2327
 
-nMSE error\;0.076357
+nMSE error\;0.092362
 
 \begin{multicols}{2}
-\begin{bundle}{minus2}\chunk{\begin{bundle}{normal}\chunk{\begin{bundle}{plus}\chunk{x2}\end{bundle}}\end{bundle}}\chunk{\begin{bundle}{linear}\chunk{\begin{bundle}{parabola}\chunk{x1}\end{bundle}}\end{bundle}}\end{bundle}
+\begin{bundle}{normal}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{mult}\chunk{\begin{bundle}{plus2}\chunk{x2}\chunk{\begin{bundle}{plus}\chunk{\begin{bundle}{sin}\chunk{\begin{bundle}{parabola}\chunk{\begin{bundle}{linear}\chunk{x2}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}}\end{bundle}
 
 \columnbreak
 \includegraphics[width=8cm]{10.eps}

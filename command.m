@@ -15,7 +15,7 @@ try
     load bestModels_synthetic5456
 catch
     bestModels = cell(1);
-    for i=1:5
+    for i=1:1
         population = main(project, vars);
         f1 = str2func(population{1}.Handle);
         f2 = @(x)f1(population{1}.FoundParams(:)',x);

@@ -13,7 +13,7 @@ end;
 try
     for j=2:length(vars)
         h = vars{j};
-        X1 = [X1 h(X)];
+        X1 = [X1 h(X1)];
     end;
 catch
     'NO NEW VARIABLES'
