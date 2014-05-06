@@ -97,7 +97,7 @@ for i = 1:iter
     set(hleg1,'Location','SouthWest')
     %ylabel('nMSE or nDCG');
     xlabel('features in model');
-    
+    set(findall(h,'type','text'),'fontSize',14)
 end;
 
 %na = na(1,:);

@@ -179,7 +179,7 @@ i^* = \argmin\limits_{i \in I \backslash F_{k-1}} S(\mathbf{w} | X^{\ell}, \varp
 На данном этапе вычислительного эксперимента предлагается сгенерировать с помощью mvr.sl несколько признаков, затем добавить их к уже имеющимся и оценить изменение качества линейной модели на тестовой выборке.
 
 Для начала воспользуемся синтетическими данными. Для этого воспользуемся функцией Розенброка:
-$$f(\mathbf{x}) = \sum_{i=1}^{N-1} \left[  (1-x_i)^2+ 100 (x_{i+1} - x_i^2 )^2 \right] \quad \forall,  x\in\mathbb{R}^N,$$ при $N=40$. Добавим к значениям $f(\mathbf{x})$ шум, равный 1\% от среднего значения $f(\mathbf{x})$, имеющий нормальное распределение. Добавим 10 шумовых переменных, имеющих нормальное распределение.
+$$f(\mathbf{x}) = \sum_{i=1}^{N-1} \left[  (1-x_i)^2+ 100 (x_{i+1} - x_i^2 )^2 \right] \quad, \forall  x\in\mathbb{R}^N,$$ при $N=40$. Добавим к значениям $f(\mathbf{x})$ шум, равный 1\% от среднего значения $f(\mathbf{x})$, имеющий нормальное распределение. Добавим 10 шумовых переменных, имеющих нормальное распределение.
 
 \begin{figure}[H]
 \begin{center}
@@ -192,11 +192,29 @@ $$f(\mathbf{x}) = \sum_{i=1}^{N-1} \left[  (1-x_i)^2+ 100 (x_{i+1} - x_i^2 )^2 \
 \begin{figure}[H]
 \begin{center}
 \subfloat[50 исходных признаков]{\includegraphics[width=0.5\textwidth]{15_synthetic50+13vars_FLM_WITH_0GEN_VARS.eps}}
-\subfloat[добавлен один сгенерированный признак]{\includegraphics[width=0.5\textwidth]{15_synthetic50+13vars_FLM_WITH_1GEN_VAR.eps}}
+\subfloat[добавлен один сгенерированный признак]{\includegraphics[width=0.5\textwidth]{15_synthetic50+13vars_FLM_WITH_1GEN_VAR.eps}}//
 \subfloat[добавлено два сгенерированных признака]{\includegraphics[width=0.5\textwidth]{15_synthetic50+13vars_FLM_WITH_2GEN_VARS.eps}}
 \subfloat[добавлено три сгенерированных признака]{\includegraphics[width=0.5\textwidth]{15_synthetic50+13vars_FLM_WITH_3GEN_VARS.eps}}
 \end{center}
 \caption{Пошаговое добавление переменных при поиске линейной модели.}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\subfloat{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL1.eps}}
+\subfloat{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL2.eps}}
+\end{center}
+\caption{Изменение качества полиномиальной модели в зависимости от степени полинома.}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\subfloat[Полином первой степени]{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL_POWER1.eps}}
+\subfloat[Полином второй степени]{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL_POWER2.eps}}//
+\subfloat[Полином третьей степени]{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL_POWER3.eps}}
+\subfloat[Полином четвертой степени]{\includegraphics[width=0.5\textwidth]{16_synthetic2+0vars_QUALITY_POLYNOMIAL_POWER4.eps}}
+\end{center}
+\caption{Зависимость качества полиномиальной модели от количества переменных.}
 \end{figure}
 
 На графике ниже изображена нормированная среднеквадратичная ошибка для линейной модели в зависимости от числа использованных переменных (переменные добавлялись по одной таким образом, чтобы получившаяся модель давала наилучшее качество на обучающей выборке). Минимум ошибки на тестовой выборке достигается при 40 переменных и равен 0.1676. Эти переменные были использованы для порождения новых признаков. После добавления к имеющимся признакам 8 сгенерированных признаков, о которых написано ниже, минимум ошибки на тестовой выборке достигается при 38 переменных и равен 0.1139.

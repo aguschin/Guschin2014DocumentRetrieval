@@ -1,8 +1,9 @@
 %create synthetic data
 
-function [y,x] = GenerateSample(s,func,d)
+function [y,x] = GenerateSample(s,func,d,noise)
 
 if nargin < 3, d = 2; end;
+if nargin < 4, noise = 'on'; end;
 
 THISFOLDER = fileparts(mfilename('fullpath'));
 DATAFOLDER = fullfile(THISFOLDER,'data');
@@ -12,8 +13,10 @@ if strcmp(func, 'testfunc')
 elseif strcmp(func, 'Rosenb')
     x = randn(s,d);
     y = Rosenb(x);
-    x = [x randn(s,round(d/4))]; %noise features
-    y = y + 0.05*mean(y)*randn(s,1); %gaussian noise
+    if strcmp(noise,'on')
+        x = [x randn(s,round(d/4))]; %noise features
+    end;
+    %y = y + 0.05*mean(y)*randn(s,1); %gaussian noise
 end;
 
 data = [y,x];

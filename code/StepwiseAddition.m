@@ -11,5 +11,5 @@ for i=1:newFeatures
     hleg1 = legend('nMSE: Learning','nMSE: Test','nDCG: Learning','nDCG: Test');
     xlabel('Number of variables added');
     set(hleg1,'Location','SouthWest');
-    set(findall(e,'type','text'),'fontSize',14,'fontWeight','bold')
+    set(findall(e,'type','text'),'fontSize',14)
 end;

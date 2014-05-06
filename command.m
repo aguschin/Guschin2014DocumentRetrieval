@@ -2,16 +2,17 @@
 
 project = 'synthetic.prj.txt'; %synthetic
 a = strsplit(project,'.');
-newFeatures = 8;
 
 if strcmp(a{1},'synthetic')
-    dim = 3;
-    %GenerateSample(10000,'Rosenb',dim);
+    dim = 2;
+    GenerateSample(400*dim,'Rosenb',dim,'off');
     dim_t = strcat('_',num2str(dim));
     itr = round(dim*5/4);
+    newFeatures = round(dim/7)+1;
 else
     dim_t = '';
     itr = 50;
+    newFeatures = 8;
 end;
 
 try
@@ -41,7 +42,9 @@ catch
     save(strcat('bestModels_',a{1},dim_t),'bestModels');
 end;
 
-StepwiseAddition (newFeatures, project, itr, vars, bestModels);
+PolynomialApproximation(project);
+
+%StepwiseAddition (newFeatures, project, itr, vars, bestModels);
 
 vars = na(1,:);
 save(strcat('vars1_',a{1},dim_t),'vars');
