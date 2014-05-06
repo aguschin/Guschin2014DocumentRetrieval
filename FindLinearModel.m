@@ -91,16 +91,16 @@ for i = 1:iter
     na
     [a, b] = min(na(3,:))
     figure(h);
-    p = plot(linspace(1,i,i),na(2,:),'r',linspace(1,i,i),na(3,:),'b',linspace(1,i,i),na(4,:),'g',linspace(1,i,i),na(5,:),'c');
+    p = plot(linspace(1,i,i),na(2,:),'r',linspace(1,i,i),na(3,:));%,'b',linspace(1,i,i),na(4,:),'g',linspace(1,i,i),na(5,:),'c');
     %set(p,'linewidth',2);
-    hleg1 = legend('nMSE (learning sample)','nMSE (testing sample)', 'nDCG (learning sample)', 'nDCG (testing sample)');
+    hleg1 = legend('nMSE (learning sample)','nMSE (testing sample)');%, 'nDCG (learning sample)', 'nDCG (testing sample)');
     set(hleg1,'Location','SouthWest')
     %ylabel('nMSE or nDCG');
     xlabel('features in model');
     
 end;
 
-na = na(1,:);
+%na = na(1,:);
 mdl = fitlm(data.X(:,na(1,1:b)),data.Y)
 
 %Testing nDCG

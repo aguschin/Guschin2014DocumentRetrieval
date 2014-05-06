@@ -1,0 +1,13 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Guschin2014DocumentRetrieval.aux
+The style file: unsrt.bst
+Database file #1: Guschin2014DocumentRetrieval.bib
+Repeated entry---line 164 of file Guschin2014DocumentRetrieval.bib
+ : @inproceedings{ponte1998language
+ :                                 ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in salton1983introduction
+Too many commas in name 1 of "Goswami P., Moura1 S., Gaussier E., Amini M.R." for entry Goswami2014
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in Goswami2014
+Warning--empty journal in joachims1999making
+(There were 2 error messages)

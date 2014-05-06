@@ -1,24 +1,33 @@
 %join GenerateSample and main
 
 project = 'synthetic.prj.txt'; %synthetic
-
-
-
 a = strsplit(project,'.');
+newFeatures = 8;
 
-try
-    load(strcat('2vars_',a{1},dim_t));
-catch
-    [vars, mdl] = FindLinearModel(project, 15);
-    save(strcat('vars_',a{1}),dim_t,'vars');
+if strcmp(a{1},'synthetic')
+    dim = 50;
+    %GenerateSample(10000,'Rosenb',dim);
+    dim_t = strcat('_',num2str(dim));
+    itr = round(dim*5/4);
+else
+    dim_t = '';
+    itr = 50;
 end;
 
 try
-    load(strcat('bestModels1_',a{1},dim_t));
+    load(strcat('vars_',a{1},dim_t));
+catch
+    [na, mdl] = FindLinearModel(project, itr);
+    vars = na(1,:);
+    save(strcat('vars_',a{1},dim_t),'vars');
+end;
+
+try
+    load(strcat('bestModels_',a{1},dim_t));
 catch
     bestModels = cell(1);
     i = 1;
-    while i <= 10
+    while i <= newFeatures
         try
             population = main(project, vars);
             f1 = str2func(population{1}.Handle);
@@ -32,5 +41,20 @@ catch
     save(strcat('bestModels_',a{1},dim_t),'bestModels');
 end;
 
-[vars, mdl] = FindLinearModel(project, 50, [vars bestModels]);
+
+
+e = figure('name','adding new generated variables');
+Q = zeros(4,1);
+for i=1:newFeatures
+    x = linspace(1,i,i);
+    [na, mdl] = FindLinearModel(project, itr+newFeatures, [vars bestModels(1:i)]);
+    Q(:,i) = na(2:5,mdl.NumVariables);
+    figure(e);
+    p = plot(x,Q(1,:),'r',x,Q(2,:),'g',x,Q(3,:),'b',x,Q(4,:),'k');
+    hleg1 = legend('nMSE: Learning','nMSE: Test','nDCG: Learning','nDCG: Test');
+    xlabel('Number of variables added');
+    set(hleg1,'Location','SouthWest');
+    set(findall(e,'type','text'),'fontSize',14,'fontWeight','bold')
+end;
+vars = na(1,:);
 save(strcat('vars1_',a{1},dim_t),'vars');

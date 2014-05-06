@@ -31,8 +31,10 @@ initParams = cell2mat(model.InitParams');
 model.FoundParams = [];
 if ~isempty(model.InitParams)
     try
+        warning off
         [model.FoundParams, ~, ~, model.ParamsCov, model.MSE] =...
             nlinfit(x, y, handle, initParams, nlinopt); % find parameters
+        warning on
     catch
           disp('nlinfit failed, Found Params = Init Params')
           model.FoundParams = initParams;

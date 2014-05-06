@@ -12,8 +12,8 @@ if strcmp(func, 'testfunc')
 elseif strcmp(func, 'Rosenb')
     x = randn(s,d);
     y = Rosenb(x);
-    x = [x randn(s,round(d/4))]; %noise features
-    y = y + 0.05*mean(y)*randn(s,1); %gaussian noise
+    x = [x randn(s,d)];
+    y = y + 0.01*mean(y)*randn(s,1); %gaussian noise
 end;
 
 data = [y,x];

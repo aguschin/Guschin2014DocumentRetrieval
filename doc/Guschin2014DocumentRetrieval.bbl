@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{salton1983introduction}
+Gerard Salton and Michael~J McGill.
+\newblock Introduction to modern information retrieval.
+\newblock 1983.
+
+\bibitem{ponte1998language}
+Jay~M Ponte and W~Bruce Croft.
+\newblock A language modeling approach to information retrieval.
+\newblock In {\em Proceedings of the 21st annual international ACM SIGIR
+  conference on Research and development in information retrieval}, pages
+  275--281. ACM, 1998.
+
+\bibitem{robertson2004simple}
+Stephen Robertson, Hugo Zaragoza, and Michael Taylor.
+\newblock Simple bm25 extension to multiple weighted fields.
+\newblock In {\em Proceedings of the thirteenth ACM international conference on
+  Information and knowledge management}, pages 42--49. ACM, 2004.
+
+\bibitem{metzler2005markov}
+Donald Metzler and W~Bruce Croft.
+\newblock A markov random field model for term dependencies.
+\newblock In {\em Proceedings of the 28th annual international ACM SIGIR
+  conference on Research and development in information retrieval}, pages
+  472--479. ACM, 2005.
+
+\bibitem{Goswami2014}
+Gaussier E. Amini~M.R. Goswami~P., Moura1~S.
+\newblock Exploring the space of ir functions.
+\newblock 2014.
+
+\bibitem{clinchant2010information}
+St{\'e}phane Clinchant and Eric Gaussier.
+\newblock Information-based models for ad hoc ir.
+\newblock In {\em Proceedings of the 33rd international ACM SIGIR conference on
+  Research and development in information retrieval}, pages 234--241. ACM,
+  2010.
+
+\bibitem{liu2009learning}
+Tie-Yan Liu.
+\newblock Learning to rank for information retrieval.
+\newblock {\em Foundations and Trends in Information Retrieval}, 3(3):225--331,
+  2009.
+
+\bibitem{crammer2001pranking}
+Koby Crammer, Yoram Singer, et~al.
+\newblock Pranking with ranking.
+\newblock In {\em NIPS}, volume~14, pages 641--647, 2001.
+
+\bibitem{cohen2011learning}
+William~W Cohen, Robert~E Schapire, and Yoram Singer.
+\newblock Learning to order things.
+\newblock {\em arXiv preprint arXiv:1105.5464}, 2011.
+
+\bibitem{freund2003efficient}
+Yoav Freund, Raj Iyer, Robert~E Schapire, and Yoram Singer.
+\newblock An efficient boosting algorithm for combining preferences.
+\newblock {\em The Journal of machine learning research}, 4:933--969, 2003.
+
+\bibitem{joachims1999making}
+Thorsten Joachims.
+\newblock Making large scale svm learning practical.
+\newblock 1999.
+
+\bibitem{valizadegan2009learning}
+Hamed Valizadegan, Rong Jin, Ruofei Zhang, and Jianchang Mao.
+\newblock Learning to rank by optimizing ndcg measure.
+\newblock In {\em NIPS}, volume~22, pages 1883--1891, 2009.
+
+\bibitem{robertson2009probabilistic}
+Stephen Robertson and Hugo Zaragoza.
+\newblock {\em The probabilistic relevance framework: BM25 and beyond}.
+\newblock Now Publishers Inc, 2009.
+
+\end{thebibliography}

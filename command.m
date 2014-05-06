@@ -1,30 +1,33 @@
 %join GenerateSample and main
 
 project = 'synthetic.prj.txt'; %synthetic
-
 a = strsplit(project,'.');
+newFeatures = 8;
 
 if strcmp(a{1},'synthetic')
-    dim = 20;
-    GenerateSample(10000,'Rosenb',dim);
+    dim = 3;
+    %GenerateSample(10000,'Rosenb',dim);
     dim_t = strcat('_',num2str(dim));
+    itr = round(dim*5/4);
 else
     dim_t = '';
+    itr = 50;
 end;
 
 try
     load(strcat('vars_',a{1},dim_t));
 catch
-    [vars, mdl] = FindLinearModel(project, 15);
+    [na, mdl] = FindLinearModel(project, itr);
+    vars = na(1,:);
     save(strcat('vars_',a{1},dim_t),'vars');
 end;
 
 try
-    load(strcat('bestModels1_',a{1},dim_t));
+    load(strcat('bestModels_',a{1},dim_t));
 catch
     bestModels = cell(1);
     i = 1;
-    while i <= 5
+    while i <= newFeatures
         try
             population = main(project, vars);
             f1 = str2func(population{1}.Handle);
@@ -38,5 +41,7 @@ catch
     save(strcat('bestModels_',a{1},dim_t),'bestModels');
 end;
 
-[vars, mdl] = FindLinearModel(project, 50, [vars bestModels]);
+StepwiseAddition (newFeatures, project, itr, vars, bestModels);
+
+vars = na(1,:);
 save(strcat('vars1_',a{1},dim_t),'vars');

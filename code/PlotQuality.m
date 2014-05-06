@@ -18,7 +18,7 @@ for i=1:size(population,2)
     nDCG_Test(i) = nDCG_f(data.TestX, data.TestY, population{i}.FoundParams, population{i}.Handle);
 end;
 
-Q(2,itr) = min(100,mean(nMSE)); %avoiding machine zero (mean(nMSE) could be over 10^20 for the first iteration)
+Q(2,itr) = min(1,mean(nMSE)); %avoiding machine zero (mean(nMSE) could be over 10^20 for the first iteration)
 Q(3,itr) = mean(nDCG);
 Q(4,itr) = mean(nDCG_Test);
 
